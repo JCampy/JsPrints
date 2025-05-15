@@ -1,0 +1,129 @@
+{% extends "base.html" %} {% block title%} Account Management {% endblock %} {% block content
+%}
+<div class="container">
+  <div id="outer__account__management">
+    <div class="account__management" id="account__management__main">
+      <h1 id="account__management__title">My Account</h1>
+      <form id="account-details" method="POST">
+        <div class="input__group">
+          {% if user %}
+          <label for="username"
+            >Username: <strong>{{ user.user_name }}</strong></label
+          >
+          <input
+            type="text"
+            class="update__info"
+            id="username"
+            name="update_username"
+            placeholder="New username"
+          />
+        </div>
+        <div class="input__group">
+          <label for="password">Current Password:</label>
+          <input
+            type="password"
+            class="update__info"
+            id="password"
+            name="password1"
+            placeholder="Current password"
+          />
+        </div>
+        <div class="input__group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="update__info"
+            id="password"
+            name="update_password2"
+            placeholder="New password (Current password required)"
+          />
+        </div>
+        <div class="input__group">
+          <label for="email"
+            >Email: <strong>{{ user.user_email }}</strong></label
+          >
+          <input type="text" class="update__info" id="email" name="update_email" placeholder="New email"/>
+        </div>
+        <label>Address:</label> <br>
+        {% if user.user_address %} 
+        {% set addr_List = user.user_address.split(',') %}
+            <strong> {{ addr_List[0] + ', ' + addr_List[1] + ',' }}
+            <br>
+            {{ addr_List[2] + ' ' + addr_List[3] + ', ' + addr_List[4] + ','}}
+            <br>
+            {{ addr_List[5] }}
+            </strong>
+            {% endif %}
+            <br><br>
+        <div class="shipping__extra">
+          <div>
+            <label for="update-shipping" id="update-shipping-addr">Update shipping address: </label>
+          </div>
+          <div>
+            <input type="checkbox" onchange="updateBillingCheckBox()" stored_value='value' id="update-shipping" name='update-shipping' /> 
+          </div>
+        </div>
+        <div class="input__group" id="shipping-address">
+          <h2>
+            Shipping Address 
+          </h2>
+          <div class="input__group">
+            <label>Address line 1:</label>
+            <input type="text" class="update__info" name="update_s_address1" placeholder="Address line 1"/>
+            <label>Address line 2:</label>
+            <input type="text" class="update__info" name="update_s_address2" placeholder="Address line 2 (Optional)"/>
+            <label>City:</label>
+            <input type="text" class="update__info" name="update_s_city" placeholder="City"/>
+            <label>State:</label>
+            <input type="text" class="update__info" name="update_s_state" placeholder="State"/>
+            <label>Zip code:</label>
+            <input type="text" class="update__info" name="update_s_zip_code" placeholder="Zip-code"/>
+            <label>Country:</label>
+            <input type="text" class="update__info" name="update_s_country" placeholder="Country"/>
+          </div>
+        </div>
+        <div class="input__group" id="billing-address">
+          <h2>
+            Billing Address
+          </h2>
+          <label>Address line 1:</label>
+            <input type="text" class="update__info" name="update_b_address1" placeholder="Address line 1"/>
+            <label>Address line 2:</label>
+            <input type="text" class="update__info" name="update_b_address2" placeholder="Address line 2 (Optional)"/>
+            <label>City:</label>
+            <input type="text" class="update__info" name="update_b_city" placeholder="City"/>
+            <label>State:</label>
+            <input type="text" class="update__info" name="update_b_State" placeholder="State"/>
+            <label>Zip code:</label>
+            <input type="text" class="update__info" name="update_b_zip_code" placeholder="Zip-code"/>
+            <label>Country:</label>
+            <input type="text" class="update__info" name="update_b_country" placeholder="Country"/>
+          </div>
+          <label>Billing address:</label>
+          <div class="billing__extra">
+            <div>
+              <label for="same-as-shipping" id="same__as__addr">Same as Shipping Address: </label>
+            </div>
+            <div>
+              <input type="checkbox" onchange="updateBillingCheckBox()" stored_value='value'id="same-as-shipping" name='same-as-shipping' checked/> 
+            </div>
+          </div>
+          <button type="submit">Update Account</button>
+        </div>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div id="outer__account__management">
+      <div class="account__management" id="sell__product">
+        <a href="{{ url_for('routes.addProduct') }}" id="sell__a__product">
+          <button type="submit" id="sell__a__product">Sell a Product</button> 
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

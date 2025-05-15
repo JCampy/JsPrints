@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block title%} Create an Account {% endblock %} {%
+block content %}
+<div id="signup__outer__main">
+  <div id="signup__main">
+    <form action="/signup" method="POST" class="form" id="createAccount">
+      <h1 id="signup__title">Create Account</h1>
+      <div class="signup__input__group" id="f__and__l__name">
+        <div id="f__name">
+          <input
+            type="text"
+            class="signup__input"
+            name="signUpFirstName"
+            autofocus
+            placeholder="First Name"
+          />
+        </div>
+        <div id="l__name">
+          <input
+            type="text"
+            class="signup__input"
+            name="signUpLastName"
+            autofocus
+            placeholder="Last Name"
+          />
+        </div>
+      </div>
+      <div class="signup__input__group">
+        <input
+          type="text"
+          id="signUpUserName"
+          class="signup__input"
+          name="signUpUsername"
+          autofocus
+          placeholder="Username"
+        />
+      </div>
+      <div class="signup__input__group">
+        <input
+          type="text"
+          id="signUpEmail"
+          class="signup__input"
+          name="signUpEmail"
+          autofocus
+          placeholder="Email"
+        />
+      </div>
+      <div class="signup__input__group">
+        <input
+          type="text"
+          id="signUpPhoneNum"
+          class="signup__input"
+          name="signUpPhoneNum"
+          autofocus
+          placeholder="Phone Number (Optional)"
+        />
+      </div>
+      <div class="signup__input__group">
+        <input
+          type="password"
+          id="signUpPass"
+          class="signup__input"
+          name="password1"
+          autofocus
+          placeholder="Password"
+        />
+      </div>
+      <div class="signup__input__group">
+        <input
+          type="password"
+          class="signup__input"
+          id="signUpPass2"
+          name="password2"
+          autofocus
+          placeholder="Re-enter Password"
+        />
+      </div>
+      <button
+        class="signup__button"
+        type="submit"
+        id="create__acc__submit"
+        name="create__acc__submit"
+      >
+        Create Account
+      </button>
+      <p class="signup__text">
+        <a
+          class="form__link"
+          id="linkLogin"
+          href=" {{ url_for('authentication.login')}}"
+          >Already have an account? Sign in.</a
+        >
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

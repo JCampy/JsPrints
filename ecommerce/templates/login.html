@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title%} Login {% endblock %} {% block content
+%}
+<div id="login__outer__main">
+  <div id="inner__main">
+    <form action="/login" method="POST" class="form" id="login__main">
+      <h1 id="login__title">Login</h1>
+      <div class="login__message login__message--error"></div>
+      <div class="login__input__group">
+        <input
+          type="text"
+          class="login__input"
+          name="username__or__email"
+          autofocus
+          placeholder="Username or Email"
+        />
+        <div class="login__input-error-message"></div>
+      </div>
+      <div class="login__input__group">
+        <input
+          type="password"
+          class="login__input"
+          name="login__password"
+          autofocus
+          placeholder="Password"
+        />
+        <div class="login__input-error-message"></div>
+      </div>
+      <button class="login__button" type="submit" id="login__submit">
+        Log in
+      </button>
+      <p class="login__text">
+        <a href="#" class="form__link">Forgot your password?</a>
+      </p>
+      <p class="form__text">
+        <a
+          class="form__link"
+          id="linkCreateAccount"
+          href=" {{ url_for('authentication.signup') }}"
+          >Don't have an account? Create account</a
+        >
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

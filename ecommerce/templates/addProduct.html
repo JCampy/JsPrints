@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title%} Home {% endblock %} {% block content
+%}
+<div id="outer__add__product">
+  <div id="add__product__main" style="display: show">
+    <h1 id="add__product__title">Add Product</h1>
+    <form id="add__product" method="POST" enctype="multipart/form-data">
+      <label for="p_name">Product details:</label>
+      <div id="add__product__name">
+        <input
+          type="text"
+          class="update__info"
+          id="p_name"
+          name="p_name"
+          placeholder="Name of Product"
+          required
+        />
+        <input
+          type="text"
+          class="update__info"
+          id="p_price"
+          name="p_price"
+          placeholder="Product price $"
+          rows="5"
+          required
+        />
+        <input
+          type="text"
+          class="update__info"
+          id="category"
+          name="category"
+          placeholder="Category"
+          required
+        />
+      </div>
+      <label for="email">Product description: </label>
+      <div id="add__product__name">
+        <textarea
+          type="text"
+          class="update__info"
+          id="p_desc"
+          name="p_desc"
+          placeholder="Entere a description ... "
+          rows="8"
+          required
+        >
+        </textarea>
+      </div>
+      <input type="file" name="uploadedFile" id="file__upload" />
+      <button type="submit">Add product</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

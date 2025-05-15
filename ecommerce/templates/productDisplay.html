@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title%} {{ product.name }} {% endblock %} {% block content
+%}
+<div id="outer__shopping__cart">
+  <div class="shopping__cart" id="shopping__cart__main">
+    <div class="product__popup__content" id="product__popup__box__main">
+      <div id="product__popup__content__title__img">
+        <h1 id="product__name">{{ product.product_name }} </h1>
+        <img class="product__img" id="product__image" src="{{ url_for('static', filename='UPLOAD_FOLDER/' + product.filename)}}" />
+      </div>
+      <div id="product__popup__content__info">
+        <ul id="product__important__info__list">
+          <li>{{ owner.user_name }} </li>
+          <li>Unrated</li>
+          <li> {% if location %} <strong>{{ location }} </strong> {% else %} <strong>Unknown</strong>  {% endif %} </li>
+        </ul>
+        <div class="product__popup__content__element" id="product__desc">
+          <p>{{ product.prod_desc }}</p>
+        </div>
+        <form class="add__to__cart" method="POST">
+          <button type="submit" id="add__to__cart__button">Add to cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+{% endblock %}

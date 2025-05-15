@@ -1,0 +1,275 @@
+{% extends "base.html" %} {% block title%} Shopping Cart {% endblock %} {% block
+content %}
+<div id="outer__shopping__cart">
+  <div class="shopping__cart" id="shopping__cart__main" style="display: show">
+    <h1 id="cart__title">Shopping Cart</h1>
+    <div id="cart-items">
+      <form class="form" method="POST">
+        <!-- Sample cart items -->
+        {% if cart is defined and cart %} {% for item in cart %}
+        <div class="cart-item">
+          <div class="product-details">
+            <h3>{{ item.products.product_name }}</h3>
+            <p>{{ item.products.prod_desc }}</p>
+          </div>
+          <div class="product-price">${{ item.products.prod_price }}</div>
+        </div>
+        {% endfor %} {% else %}
+        <div class="cart-item">
+          <div class="product-details">
+            <h3>Empty cart ...</h3>
+            <p>add items to cart ...</p>
+          </div>
+          <div class="product-price">$00.00</div>
+        </div>
+        {% endif %}
+        <label>Name: </label>
+        <div class="shopping__cart" id="cart__name">
+          <input
+            type="text"
+            class="update__info"
+            id="fname"
+            name="fname"
+            placeholder="First name"
+            required
+          />
+          <input
+            type="text"
+            class="update__info"
+            id="lname"
+            name="lname"
+            placeholder="Last name"
+            required
+          />
+        </div>
+        <label for="email">Email: </label>
+        <div class="shopping__cart" id="cart__name">
+          <input
+            type="text"
+            class="update__info"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <label>Payment Information:</label>
+        <div class="shopping__cart" id="payment__details">
+          <label for="card__num">Card Number</label>
+          <input
+            type="text"
+            class="payment__info"
+            id="card__num"
+            name="card__num"
+            placeholder="#### #### #### #### "
+            required
+          />
+          <label for="name__on__card">Card holder</label>
+          <input
+            type="text"
+            class="payment__info"
+            id="name__on__card"
+            name="name__on__card"
+            placeholder="Name on card"
+            required
+          />
+          <div id="inner__payment__labels">
+            <div id="inner__payment__label1">
+              <label for="card__exp">Card experiation date</label>
+            </div>
+            <div id="inner__payment__label2">
+              <label for="card__sec__pin">Card security pin </label>
+            </div>
+          </div>
+          <div id="inner__payment__details">
+            <input
+              type="text"
+              class="payment__info"
+              id="card__exp"
+              name="card__exp"
+              placeholder="##/##"
+              required
+            />
+            <input
+              type="text"
+              class="payment__info"
+              id="card__sec__pin"
+              name="card__sec__pin"
+              placeholder="###"
+              required
+            />
+          </div>
+        </div>
+        <!-- For future update adding a drop down menu that displays selected address -->
+        <label for="shipping-address">Shipping Address:</label>
+        <br />
+        {% if user.user_address %} {% set addr_List =
+        user.user_address.split(',') %}
+        <strong id="shown_shipping">
+          {{ addr_List[0] + ', ' + addr_List[1] + ',' }}
+          <br />
+          {{ addr_List[2] + ' ' + addr_List[3] + ', ' + addr_List[4] + ','}}
+          <br />
+          {{ addr_List[5] }}
+        </strong>
+        {% endif %}
+        <br /><br />
+        <div class="shipping__extra">
+          <div>
+            <label for="update-shipping" id="update-shipping-addr"
+              >[Update / add] shipping address:
+            </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              onchange="updateBillingCheckBox()"
+              stored_value="value"
+              id="update-shipping"
+              name="update-shipping"
+            />
+          </div>
+        </div>
+        <div class="input__group" id="shipping-address">
+          <h2>Shipping Address</h2>
+          <div class="input__group">
+            <label>Address line 1:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_address1"
+              placeholder="Address line 1"
+            />
+            <label>Address line 2:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_address2"
+              placeholder="Address line 2 (Optional)"
+            />
+            <label>City:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_city"
+              placeholder="City"
+            />
+            <label>State:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_state"
+              placeholder="State"
+            />
+            <label>Zip code:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_zip_code"
+              placeholder="Zip-code"
+            />
+            <label>Country:</label>
+            <input
+              type="text"
+              class="update__info"
+              name="update_s_country"
+              placeholder="Country"
+            />
+          </div>
+        </div>
+        <div class="input__group" id="billing-address">
+          <h2>Billing Address</h2>
+          <label>Address line 1:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_address1"
+            placeholder="Address line 1"
+          />
+          <label>Address line 2:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_address2"
+            placeholder="Address line 2 (Optional)"
+          />
+          <label>City:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_city"
+            placeholder="City"
+          />
+          <label>State:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_State"
+            placeholder="State"
+          />
+          <label>Zip code:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_zip_code"
+            placeholder="Zip-code"
+          />
+          <label>Country:</label>
+          <input
+            type="text"
+            class="update__info"
+            name="update_b_country"
+            placeholder="Country"
+          />
+        </div>
+        <label>Billing address:</label>
+        <div class="billing__extra">
+          <div>
+            <label for="same-as-shipping" id="same__as__addr"
+              >Same as Shipping Address:
+            </label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              onchange="updateBillingCheckBox()"
+              stored_value="value"
+              id="same-as-shipping"
+              name="same-as-shipping"
+              checked
+            />
+          </div>
+        </div>
+        <button type="submit" id="cart__button" name="cart__button">
+          Checkout
+        </button>
+      </form>
+      <br />
+      <br />
+      <div id="back__to__prod">
+        <a href="{{ url_for('routes.products') }}">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="outer__order__confirmation" style="display: none">
+  <div class="order__confirmation" id="order__confirmation">
+    <h1 id="thank__you">Thank you for your purchase</h1>
+    <p id="confirmaiton__message">
+      Your order #12345 is being processed and you will recieve an email
+      shortly.
+    </p>
+    <div>
+      <a href="{{ url_for('routes.products') }}"
+        ><button
+          type="submit"
+          id="back__to__shopping"
+          name="back__to__shopping"
+        >
+          Back to shopping
+        </button></a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Ignore tempcoderunner file or folder
+tempCodeRunnerFile
+
+# dotenv environment variables
+.env

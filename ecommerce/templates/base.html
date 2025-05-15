@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<link 
+      href="https://cdn.jsdelivr.net/npm/boosted@5.2.3/dist/css/boosted.min.css" 
+      rel="stylesheet" integrity="sha384-zYFw+mxKy6r9zpAc1NoGiYBfQmxfvg7ONEMr81WeU+WLPPaLC9QTrNGFJTBi3EIn" 
+      crossorigin="anonymous"
+    /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>{% block title %} J's Prints {% endblock %}</title>
+  </head>
+  <body>
+    <div class="container__main">
+      <header class="my__header">
+        <a href="{{ url_for('routes.index') }}"
+          ><img
+            id="logo"
+            src="{{ url_for('static', filename='images/logo-no-background-resized-3.png') }}"
+            alt="logo"
+        /></a>
+        <nav>
+          <ul id="nav__links">
+            <form action="{{ url_for('routes.search') }}" method="get">
+              <input type="text" name="q" placeholder="Search...">
+              <button type="submit">Search</button>
+            </form>
+            {% if user.is_authenticated %}
+            <li><a href="{{ url_for('authentication.logout') }}">Logout</a></li>
+            <li>
+              <a href="{{ url_for('routes.accountManagement') }}">Account</a>
+            </li>
+            <li>
+              <a href="{{ url_for('routes.shoppingCart') }}"
+              <i class="bi bi-cart4" style="font-size: 1rem;"></i></a>
+            </li>
+            {% else %}
+            <li><a href="{{ url_for('authentication.login') }}">Login</a></li>
+            <li id="shopping__cart__logo">
+              <a href="{{ url_for('routes.shoppingCart') }}"
+                ><i class="bi bi-cart4" style="font-size: 1rem;"></i></a>
+            </li>
+            {% endif %}
+          </ul>
+          <!--
+          <button class="navbar-toggle" , type="button" data-toggle="collapse">
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+        --></nav>
+      </header>
+      <div class="flash__messages">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% else %}
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+  <footer>
+    <div class="bottom__nav">
+      <ul class="bottom__nav__one">
+        <li>J's Prints Website Information</li>
+        <li>Need Help? Contact us at: (EMAIL)</li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+      <ul class="bottom__nav__two">
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Account</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Payments</a></li>
+      </ul>
+    </div>
+  </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

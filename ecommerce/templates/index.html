@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title%} J's Prints {% endblock %} {% block
+content %}
+<div id="outer-main">
+  <div id="main">
+    <div id="main-welcome">
+      <h1 id="welcome">Welcome to J's Prints!</h1>
+    </div>
+    <div id="main-text">
+      <p>
+        We are dedicated to providing you with high quality prints of special
+        moments you want to remember everday. We have a wide variety of prints
+        delivered fast to your door and guarenteed to make you smile!
+      </p>
+    </div>
+  </div>
+</div>
+<div id="lower__nav">
+  <nav id="nav__lower">
+    <ul id="lower__nav__links">
+      <li>
+        <a href="#"><button>Contact Us</button></a>
+      </li>
+      <li>
+        <a href="{{ url_for('routes.products') }}"><button>Shop Now</button></a>
+      </li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}
