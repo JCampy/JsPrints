@@ -1,12 +1,9 @@
-<p align="center">
-    <img src="https://img.icons8.com/?size=512&id=55494&format=png" align="center" width="30%">
-</p>
 <p align="center"><h1 align="center">JSPRINTS</h1></p>
 <p align="center">
 	<em>Print your moments, elevate your space.</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/JCampy/JsPrints?style=plastic&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+	<img src="https://img.shields.io/badge/license-MIT-blue" alt="license">
 	<img src="https://img.shields.io/github/last-commit/JCampy/JsPrints?style=flat-square&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/JCampy/JsPrints?style=flat-square&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/JCampy/JsPrints?style=flat-square&color=0080ff" alt="repo-language-count">
