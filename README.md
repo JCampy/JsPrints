@@ -257,6 +257,24 @@ Run JsPrints using the following command:
 
 ---
 
+## 📷 Screenshots of the project
+
+<p align="center">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e1.PNG?updatedAt=1747275550638" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e2.PNG?updatedAt=1747275548586" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e3.PNG?updatedAt=1747275548779" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e4.PNG?updatedAt=1747275548812" width="400" height ="100">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e5.PNG?updatedAt=1747275548721" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e6.PNG?updatedAt=1747275548765" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e7.PNG?updatedAt=1747275548683" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e8.PNG?updatedAt=1747275548670" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e9.PNG?updatedAt=1747275548820" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e10.PNG?updatedAt=1747275548977" width="400" height ="200">
+	<img src="https://ik.imagekit.io/09v0ffgx1/e11.PNG?updatedAt=1747275548777" width="400" height ="200">
+</p>
+
+---
+
 ## 🎗 License
 
 This project is protected under the MIT License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/mit/) file.
