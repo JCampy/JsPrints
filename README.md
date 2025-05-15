@@ -6,7 +6,7 @@
 	<em>Print your moments, elevate your space.</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/JCampy/JsPrints?style=flat-square&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/license/JCampy/JsPrints?style=plastic&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/JCampy/JsPrints?style=flat-square&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/JCampy/JsPrints?style=flat-square&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/JCampy/JsPrints?style=flat-square&color=0080ff" alt="repo-language-count">
@@ -14,7 +14,10 @@
 <p align="center">Built with the tools and technologies:</p>
 <p align="center">
 	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat-square&logo=HTML5&logoColor=white" alt="HTML5">
+	<img src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff" alt="CSS">
+	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat-square&logo=JavaScript&logoColor=black" alt="JavaScript" />
 	<img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat-square&logo=Python&logoColor=white" alt="Python">
+	<img src="https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff" alt="Flask">
 </p>
 <br>
 
@@ -174,7 +177,7 @@ The `routes.py` file in the `ecommerce` module defines routes and handlers for t
 
 Before getting started with JsPrints, ensure your runtime environment meets the following requirements:
 
-- **Programming Language:** HTML
+- **Programming Language:** Python 3.10+, HTML, CSS
 - **Package Manager:** Pip
 
 ### ⚙️ Installation
@@ -197,7 +200,7 @@ Install JsPrints using one of the following methods:
 
 3. Install the project dependencies:
 
-**Using `pip`** &nbsp; [<img align="center" src="" />]()
+**Using `pip`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Pip-3776AB.svg?style={badge_style}&logo=pypi&logoColor=white" />]()
 
 ```sh
 ❯ pip install -r requirements.txt
@@ -206,7 +209,7 @@ Install JsPrints using one of the following methods:
 ### 🤖 Usage
 
 Run JsPrints using the following command:
-**Using `pip`** &nbsp; [<img align="center" src="" />]()
+**Using**
 
 ```sh
 ❯ python main.py
