@@ -32,6 +32,7 @@
 - [📌 Project Roadmap](#-project-roadmap)
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
+- [📷 Screenshots](#📷-screenshots)
 - [🙌 Acknowledgments](#-acknowledgments)
 
 ---
@@ -257,7 +258,7 @@ Run JsPrints using the following command:
 
 ---
 
-## 📷 Screenshots of the project
+## 📷 Screenshots
 
 <p align="center">
 	<img src="https://ik.imagekit.io/09v0ffgx1/e1.PNG?updatedAt=1747275550638" width="400" height ="200">
